@@ -34,7 +34,7 @@ pub const BLOCKS: &[Block] = &[
         kind: Periodic(50),
         command: Shell(&["/home/nullifier/bin/battstatbar"]),
         prefix: "",
-        suffix: "",
+        suffix: "%",
     },
     Block {
         kind: Signal(5),

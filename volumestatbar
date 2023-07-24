@@ -1,0 +1,8 @@
+#!/bin/bash
+vol="$(wpctl get-volume @DEFAULT_SINK@)"
+
+if [[ "$vol" =~ "MUTED" ]]; then
+  printf "%s MUTED"
+else
+  echo $vol | awk '{print $NF*100 "%"}'
+fi

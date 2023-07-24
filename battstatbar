@@ -1,0 +1,16 @@
+#!/bin/bash
+batlvl="$(cat /sys/class/power_supply/BAT0/capacity)"
+batstatus="$(cat /sys/class/power_supply/BAT0/status)"
+
+case "${batstatus,,}" in
+  charging)
+    printf "󱊣:%s$batlvl"
+    ;;
+  discharging)
+    printf "󰁻:%s$batlvl"
+    ;;
+  *)
+    printf "󱈏 :%s$batlvl"
+    ;;
+esac    
+
